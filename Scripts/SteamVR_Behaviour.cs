@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Il2CppSystem.Collections.Generic;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,6 +68,7 @@ namespace Valve.VR
                     GameObject objectInstance = new GameObject("[SteamVR]");
                     _instance = objectInstance.AddComponent<SteamVR_Behaviour>();
                     _instance.steamvr_render = objectInstance.AddComponent<SteamVR_Render>();
+                    objectInstance.AddComponent<MelonCoroutineCallbacks>();
                 }
                 else
                 {
@@ -92,9 +94,11 @@ namespace Valve.VR
                 initializing = false;
             }
         }
+        new Il2CppSystem.Collections.Generic.List<Il2CppSystem.Object> list = new Il2CppSystem.Collections.Generic.List<Il2CppSystem.Object>();
 
         protected void Awake()
         {
+            list.Add(this);
             isPlaying = true;
 
             if (initializeSteamVROnAwake && forcingInitialization == false)
@@ -130,13 +134,13 @@ namespace Valve.VR
         private bool loadedOpenVRDeviceSuccess = false;
         private IEnumerator DoInitializeSteamVR(bool forceUnityVRToOpenVR = false)
         {
-            XRDevice.deviceLoaded += XRDevice_deviceLoaded;
+            XRDevice.deviceLoaded += new Action<string>(XRDevice_deviceLoaded);
             XRSettings.LoadDeviceByName(openVRDeviceName);
             while (loadedOpenVRDeviceSuccess == false)
             {
                 yield return null;
             }
-            XRDevice.deviceLoaded -= XRDevice_deviceLoaded;
+            XRDevice.deviceLoaded -= new Action<string>(XRDevice_deviceLoaded);
             EnableOpenVR();
         }
 

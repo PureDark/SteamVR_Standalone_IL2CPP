@@ -4,7 +4,7 @@
 // This file is auto-generated, do not edit it.
 //
 //=============================================================================
-#if !OPENVR_XR_API
+
 
 using System;
 using System.Runtime.InteropServices;
@@ -8168,5 +8168,4 @@ public class OpenVR
 
 
 }
-#endif
 
