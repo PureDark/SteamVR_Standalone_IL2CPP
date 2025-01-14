@@ -103,7 +103,7 @@ namespace Valve.VR
         {
             if (onPressUp != null)
             {
-                onPressUp.Invoke(this, fromSource, false);
+                //onPressUp.Invoke(this, fromSource, false);
             }
 
             if (onPressUpEvent != null)
@@ -116,7 +116,7 @@ namespace Valve.VR
         {
             if (onPressDown != null)
             {
-                onPressDown.Invoke(this, fromSource, true);
+                //onPressDown.Invoke(this, fromSource, true);
             }
 
             if (onPressDownEvent != null)
@@ -129,7 +129,7 @@ namespace Valve.VR
         {
             if (onPress != null)
             {
-                onPress.Invoke(this, fromSource, true);
+                //onPress.Invoke(this, fromSource, true);
             }
 
             if (onPressEvent != null)
@@ -142,7 +142,7 @@ namespace Valve.VR
         {
             if (onUpdate != null)
             {
-                onUpdate.Invoke(this, fromSource, newState);
+                //onUpdate.Invoke(this, fromSource, newState);
             }
 
             if (onUpdateEvent != null)
@@ -155,7 +155,7 @@ namespace Valve.VR
         {
             if (onChange != null)
             {
-                onChange.Invoke(this, fromSource, newState);
+                //onChange.Invoke(this, fromSource, newState);
             }
 
             if (onChangeEvent != null)

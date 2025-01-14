@@ -673,14 +673,17 @@ public static class SteamVR_Utils
 
 		// Preview
 		previewTexture.Apply();
-		System.IO.File.WriteAllBytes(previewFilename, previewTexture.EncodeToPNG());
+        //System.IO.File.WriteAllBytes(previewFilename, previewTexture.EncodeToPNG());
+        System.IO.File.WriteAllBytes(previewFilename, ImageConversion.EncodeToPNG(previewTexture));
 
 		// VR
 		texture.Apply();
-		System.IO.File.WriteAllBytes(VRFilename, texture.EncodeToPNG());
+        //System.IO.File.WriteAllBytes(VRFilename, texture.EncodeToPNG());
+        System.IO.File.WriteAllBytes(previewFilename, ImageConversion.EncodeToPNG(texture));
 
-		// Cleanup.
-		if (camera != tempCamera)
+
+        // Cleanup.
+        if (camera != tempCamera)
 		{
 			camera.targetTexture = oldTargetTexture;
 			camera.orthographic = oldOrthographic;

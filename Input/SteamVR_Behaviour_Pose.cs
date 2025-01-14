@@ -147,16 +147,16 @@ namespace Valve.VR
         {
             CheckDeviceIndex();
 
-            if (onConnectedChanged != null)
-                onConnectedChanged.Invoke(this, inputSource, connected);
+            //if (onConnectedChanged != null)
+            //    onConnectedChanged.Invoke(this, inputSource, connected);
             if (onConnectedChangedEvent != null)
                 onConnectedChangedEvent.Invoke(this, inputSource, connected);
         }
 
         protected virtual void OnTrackingChanged(SteamVR_Action_Pose changedAction, SteamVR_Input_Sources changedSource, ETrackingResult trackingChanged)
         {
-            if (onTrackingChanged != null)
-                onTrackingChanged.Invoke(this, inputSource, trackingChanged);
+            //if (onTrackingChanged != null)
+            //    onTrackingChanged.Invoke(this, inputSource, trackingChanged);
             if (onTrackingChangedEvent != null)
                 onTrackingChangedEvent.Invoke(this, inputSource, trackingChanged);
         }
@@ -182,8 +182,8 @@ namespace Valve.VR
                         //this.gameObject.BroadcastMessage("SetDeviceIndex", deviceIndex, SendMessageOptions.DontRequireReceiver);
                     }
 
-                    if (onDeviceIndexChanged != null)
-                        onDeviceIndexChanged.Invoke(this, inputSource, deviceIndex);
+                    //if (onDeviceIndexChanged != null)
+                    //    onDeviceIndexChanged.Invoke(this, inputSource, deviceIndex);
                     if (onDeviceIndexChangedEvent != null)
                         onDeviceIndexChangedEvent.Invoke(this, inputSource, deviceIndex);
                 }
