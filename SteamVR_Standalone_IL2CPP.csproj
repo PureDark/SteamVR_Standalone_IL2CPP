@@ -32,8 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Actions\ActionSetClasses\SteamVR_Input_ActionSet_default.cs" />
+    <Compile Include="Actions\ActionSetClasses\SteamVR_Input_ActionSet_Gameplay.cs" />
     <Compile Include="Actions\SteamVR_Input_Actions.cs" />
     <Compile Include="Actions\SteamVR_Input_ActionSets.cs" />
+    <Compile Include="Actions\SteamVR_Input_Actions_Gameplay.cs" />
     <Compile Include="Actions\SteamVR_Input_Initialization.cs" />
     <Compile Include="Input\BehaviourUnityEvents\SteamVR_Behaviour_BooleanEvent.cs" />
     <Compile Include="Input\BehaviourUnityEvents\SteamVR_Behaviour_PoseEvent.cs" />
@@ -109,7 +111,6 @@
     <Compile Include="Scripts\SteamVR_TrackingReferenceManager.cs" />
     <Compile Include="Scripts\SteamVR_Utils.cs" />
     <Compile Include="Standalone\MelonCoroutineCallbacks.cs" />
-    <Compile Include="Standalone\VRShaders.cs" />
     <Compile Include="Util\Coroutines.cs" />
     <Compile Include="Util\UnityHooks.cs" />
     <Compile Include="Util\UnstrippedMathf.cs" />

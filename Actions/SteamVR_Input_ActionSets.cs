@@ -17,21 +17,35 @@ namespace Valve.VR
     public partial class SteamVR_Actions
     {
         
-        private static SteamVR_Input_ActionSet_default p__default;
+        //private static SteamVR_Input_ActionSet_default p__default;
         
-        public static SteamVR_Input_ActionSet_default _default
+        //public static SteamVR_Input_ActionSet_default _default
+        //{
+        //    get
+        //    {
+        //        return SteamVR_Actions.p__default.GetCopy<SteamVR_Input_ActionSet_default>();
+        //    }
+        //}
+
+        private static SteamVR_Input_ActionSet_Gameplay p_Gameplay;
+
+        public static SteamVR_Input_ActionSet_Gameplay Gameplay
         {
             get
             {
-                return SteamVR_Actions.p__default.GetCopy<SteamVR_Input_ActionSet_default>();
+                return SteamVR_Actions.p_Gameplay.GetCopy<SteamVR_Input_ActionSet_Gameplay>();
             }
         }
-        
+
+
         private static void StartPreInitActionSets()
         {
-            SteamVR_Actions.p__default = ((SteamVR_Input_ActionSet_default)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_default>("/actions/default")));
+            //SteamVR_Actions.p__default = ((SteamVR_Input_ActionSet_default)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_default>("/actions/default")));
+            //Valve.VR.SteamVR_Input.actionSets = new Valve.VR.SteamVR_ActionSet[] {
+            //        SteamVR_Actions._default};
+            SteamVR_Actions.p_Gameplay = ((SteamVR_Input_ActionSet_Gameplay)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_Gameplay>("/actions/Gameplay")));
             Valve.VR.SteamVR_Input.actionSets = new Valve.VR.SteamVR_ActionSet[] {
-                    SteamVR_Actions._default};
+                    SteamVR_Actions.Gameplay};
         }
     }
 }

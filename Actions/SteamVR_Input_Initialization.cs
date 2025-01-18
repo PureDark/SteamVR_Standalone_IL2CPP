@@ -21,8 +21,8 @@ namespace Valve.VR
         {
             SteamVR_Actions.StartPreInitActionSets();
             SteamVR_Input.PreinitializeActionSetDictionaries();
-            SteamVR_Actions.PreInitActions();
-            SteamVR_Actions.InitializeActionArrays();
+            SteamVR_Actions.PreInitActions_Gameplay();
+            SteamVR_Actions.InitializeActionArrays_Gameplay();
             SteamVR_Input.PreinitializeActionDictionaries();
             SteamVR_Input.PreinitializeFinishActionSets();
         }
