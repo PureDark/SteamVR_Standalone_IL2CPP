@@ -59,6 +59,8 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_miSide_Hold_PinUI;
         
+        private static SteamVR_Action_Boolean p_miSide_ToggleVRIK;
+        
         private static SteamVR_Action_Vibration p_miSide_HapticLeft;
         
         private static SteamVR_Action_Vibration p_miSide_HapticRight;
@@ -231,6 +233,14 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Boolean miSide_ToggleVRIK
+        {
+            get
+            {
+                return SteamVR_Actions.p_miSide_ToggleVRIK.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
         public static SteamVR_Action_Vibration miSide_HapticLeft
         {
             get
@@ -271,6 +281,7 @@ namespace Valve.VR
                     SteamVR_Actions.miSide_UpArrow,
                     SteamVR_Actions.miSide_DownArrow,
                     SteamVR_Actions.miSide_Hold_PinUI,
+                    SteamVR_Actions.miSide_ToggleVRIK,
                     SteamVR_Actions.miSide_HapticLeft,
                     SteamVR_Actions.miSide_HapticRight};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
@@ -294,7 +305,8 @@ namespace Valve.VR
                     SteamVR_Actions.miSide_RightArrow,
                     SteamVR_Actions.miSide_UpArrow,
                     SteamVR_Actions.miSide_DownArrow,
-                    SteamVR_Actions.miSide_Hold_PinUI};
+                    SteamVR_Actions.miSide_Hold_PinUI,
+                    SteamVR_Actions.miSide_ToggleVRIK};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
                     SteamVR_Actions.miSide_HapticLeft,
                     SteamVR_Actions.miSide_HapticRight};
@@ -319,7 +331,8 @@ namespace Valve.VR
                     SteamVR_Actions.miSide_RightArrow,
                     SteamVR_Actions.miSide_UpArrow,
                     SteamVR_Actions.miSide_DownArrow,
-                    SteamVR_Actions.miSide_Hold_PinUI};
+                    SteamVR_Actions.miSide_Hold_PinUI,
+                    SteamVR_Actions.miSide_ToggleVRIK};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[0];
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
                     SteamVR_Actions.miSide_WSAD_Move,
@@ -346,7 +359,8 @@ namespace Valve.VR
                     SteamVR_Actions.miSide_RightArrow,
                     SteamVR_Actions.miSide_UpArrow,
                     SteamVR_Actions.miSide_DownArrow,
-                    SteamVR_Actions.miSide_Hold_PinUI};
+                    SteamVR_Actions.miSide_Hold_PinUI,
+                    SteamVR_Actions.miSide_ToggleVRIK};
         }
         
         private static void PreInitActions()
@@ -372,6 +386,7 @@ namespace Valve.VR
             SteamVR_Actions.p_miSide_UpArrow = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/MiSide/in/UpArrow")));
             SteamVR_Actions.p_miSide_DownArrow = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/MiSide/in/DownArrow")));
             SteamVR_Actions.p_miSide_Hold_PinUI = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/MiSide/in/Hold_PinUI")));
+            SteamVR_Actions.p_miSide_ToggleVRIK = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/MiSide/in/ToggleVRIK")));
             SteamVR_Actions.p_miSide_HapticLeft = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/MiSide/out/HapticLeft")));
             SteamVR_Actions.p_miSide_HapticRight = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/MiSide/out/HapticRight")));
         }
