@@ -193,6 +193,22 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean Grab_Left
+        {
+            get
+            {
+                return SteamVR_Actions.miSide_Grab_Left;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean Grab_Right
+        {
+            get
+            {
+                return SteamVR_Actions.miSide_Grab_Right;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration HapticLeft
         {
             get
